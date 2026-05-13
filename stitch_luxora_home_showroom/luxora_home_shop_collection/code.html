@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUXORA HOME - Sofas Collection</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#4c320c",
+                        "surface-bright": "#fcf9f5",
+                        "on-secondary-fixed-variant": "#574335",
+                        "on-primary": "#ffffff",
+                        "border-subtle": "rgba(92, 64, 51, 0.10)",
+                        "surface-container-high": "#eae8e4",
+                        "linen": "#EDE0CF",
+                        "on-tertiary-fixed-variant": "#653d1e",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#dec1af",
+                        "surface-dim": "#dcdad6",
+                        "tertiary": "#805533",
+                        "primary-fixed": "#ffddb6",
+                        "primary-container": "#c09a6b",
+                        "cream": "#F7F2EB",
+                        "noir": "#0F0D0B",
+                        "on-surface-variant": "#4f453b",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#ca956f",
+                        "on-background": "#1c1c1a",
+                        "on-secondary-fixed": "#28180d",
+                        "tertiary-fixed": "#ffdcc5",
+                        "cedar": "#5C4033",
+                        "inverse-on-surface": "#f3f0ec",
+                        "surface-tint": "#78592f",
+                        "surface-container": "#f0ede9",
+                        "on-surface": "#1c1c1a",
+                        "primary-fixed-dim": "#e9bf8e",
+                        "inverse-primary": "#e9bf8e",
+                        "on-primary-fixed": "#2a1800",
+                        "on-tertiary-fixed": "#301400",
+                        "surface-container-low": "#f6f3ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#522e10",
+                        "on-secondary-container": "#755e50",
+                        "outline": "#807569",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e5e2de",
+                        "on-secondary": "#ffffff",
+                        "shadow-warm": "rgba(60, 35, 20, 0.12)",
+                        "primary": "#78592f",
+                        "surface": "#fcf9f5",
+                        "secondary": "#705a4c",
+                        "inverse-surface": "#31302e",
+                        "background": "#fcf9f5",
+                        "outline-variant": "#d2c4b7",
+                        "espresso": "#1B1410",
+                        "tertiary-fixed-dim": "#f4bb92",
+                        "secondary-container": "#f8dac8",
+                        "on-primary-fixed-variant": "#5d411a",
+                        "surface-container-highest": "#e5e2de",
+                        "champagne": "#D4B896",
+                        "secondary-fixed": "#fbddca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "container-padding-mobile": "24px",
+                        "gutter": "32px",
+                        "section-gap": "160px",
+                        "stack-sm": "8px",
+                        "container-padding": "120px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Cormorant Garamond"],
+                        "headline-md": ["Cormorant Garamond"],
+                        "label-sm": ["Jost"],
+                        "body-md": ["Jost"],
+                        "headline-sm": ["Cormorant Garamond"],
+                        "display-lg": ["Cormorant Garamond"],
+                        "body-lg": ["Jost"],
+                        "label-caps": ["Jost"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "300"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                        "label-caps": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.12em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/72 dark:bg-surface-dim/72 backdrop-blur-md shadow-warm transition-all duration-500">
+<div class="flex justify-between items-center px-container-padding-mobile md:px-container-padding py-stack-md w-full">
+<button class="text-primary hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<div class="font-display-lg text-headline-sm uppercase tracking-widest text-cedar dark:text-linen">
+                LUXORA HOME
+            </div>
+<button class="text-primary hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Banner -->
+<section class="relative w-full h-[442px] md:h-[618px] mt-[72px] md:mt-[88px] flex items-center justify-center overflow-hidden">
+<img alt="A sophisticated, sunlit living room featuring a luxurious off-white linen sofa resting on a textured vintage rug. Warm afternoon light streams through large windows, casting soft, organic shadows across the light oak hardwood floor and minimalist plaster walls. The scene embodies a high-end, slow-living aesthetic with tactile layering and a cohesive palette of warm ivory, beige, and subtle terracotta accents." class="absolute inset-0 w-full h-full object-cover" data-alt="A sophisticated, sunlit living room featuring a luxurious off-white linen sofa resting on a textured vintage rug. Warm afternoon light streams through large windows, casting soft, organic shadows across the light oak hardwood floor and minimalist plaster walls. The scene embodies a high-end, slow-living aesthetic with tactile layering and a cohesive palette of warm ivory, beige, and subtle terracotta accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAR-W4peIiE5PDeag-4GoZTLLnABoWHOMXXNu__CA4HAyvlEgrh8dhInduT_c401cQC_zHA-_ra8aOJgzPuhgTxpbOHJDgY9P3Wr890amHEZPnypDex477HKika1LarkGmgKN3LpumR__gzfkctP9Gqo0tewaRwNxGKXN1F-y0kneIni8TOo9s_vmAGIRp-Tc1Odz3m9JpZ77d-IiIJtKobQTY-ADNv75IvdAQbxFM2aaPIVIrQP4h0nty4J4KAAUW6YANrvghb89R"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent mix-blend-multiply"></div>
+<h1 class="relative z-10 font-display-lg text-display-lg-mobile md:text-[120px] italic text-cedar text-center px-4 mix-blend-color-burn">
+                SOFAS
+            </h1>
+</section>
+<!-- Product Grid Section -->
+<section class="px-container-padding-mobile md:px-container-padding py-stack-lg md:py-section-gap max-w-[1920px] mx-auto">
+<!-- Filters & Sort Bar -->
+<div class="flex flex-col md:flex-row justify-between items-center mb-stack-lg border-b border-border-subtle pb-4">
+<div class="flex items-center justify-between w-full md:w-auto gap-4 mb-4 md:mb-0">
+<button class="flex items-center gap-2 font-label-caps text-label-caps text-cedar tracking-widest px-6 py-3 rounded-full border border-cedar/20 hover:bg-linen/50 transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+                        FILTERS
+                    </button>
+<span class="font-body-md text-body-md text-secondary md:hidden">48 Products</span>
+</div>
+<div class="flex items-center justify-between w-full md:w-auto gap-6 hidden md:flex">
+<span class="font-body-md text-body-md text-secondary">Showing 48 products</span>
+<div class="flex items-center gap-2 cursor-pointer group">
+<span class="font-body-md text-body-md text-cedar">Sort by: <span class="font-medium">Featured</span></span>
+<span class="material-symbols-outlined text-cedar group-hover:translate-y-1 transition-transform">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10 md:gap-gutter">
+<!-- Product Card 1 -->
+<div class="group flex flex-col relative">
+<div class="relative w-full aspect-[4/5] bg-surface-container rounded-lg md:rounded-[16px] overflow-hidden mb-4 shadow-warm">
+<img alt="A pristine, minimalist product photography shot of a sleek, contemporary emerald green velvet sofa. The sofa is positioned centrally against a warm, gallery-white backdrop, illuminated by soft, diffused studio lighting that highlights the rich texture of the fabric. The composition is highly editorial, emphasizing negative space and the artisanal curves of the furniture piece." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pristine, minimalist product photography shot of a sleek, contemporary emerald green velvet sofa. The sofa is positioned centrally against a warm, gallery-white backdrop, illuminated by soft, diffused studio lighting that highlights the rich texture of the fabric. The composition is highly editorial, emphasizing negative space and the artisanal curves of the furniture piece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEU2njB5mIfhsKemtYjrqiuqWCNaPzxR24zVDwIQfrZjpb-UDog7KN6JGHcrZr--mEtKorjyL8HRM-GDPq91QqYotsIaGEcZ-566GYPCsGl7LKldmThR5bjBYC-OvilKozlZ3rkCjWC_5Oi1upyDqX0V5qAYuNZfntomR8ynOMPKZ7hWonZBrgswX18stm7K_ErQQhrjin3TkYAX3fEEnMjwHgLjdEv9Tpv4Ov-TF6lYIjHzFQFeG6kAWrswn6RfrN9vkOQk7YzBaV"/>
+<!-- Hover Overlay Desktop -->
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex items-end justify-center pb-6">
+<button class="bg-primary-container text-noir font-label-caps text-label-caps tracking-[0.12em] uppercase rounded-full px-8 py-3 hover:bg-primary-fixed-dim transition-colors shadow-warm translate-y-4 group-hover:translate-y-0 duration-300">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<div class="text-center z-10 px-2">
+<h3 class="font-headline-sm text-[20px] md:text-headline-sm text-cedar mb-1">The Cloud Sectional</h3>
+<p class="font-body-md text-body-md text-primary-container font-medium">$4,200</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col relative md:mt-12"> <!-- Asymmetric offset -->
+<div class="relative w-full aspect-[4/5] bg-surface-container rounded-lg md:rounded-[16px] overflow-hidden mb-4 shadow-warm">
+<img alt="An elegant mid-century modern loveseat upholstered in warm terracotta fabric, staged in a minimalist room with raw plaster walls. The lighting is cinematic, casting a soft, deep shadow to the right of the furniture, emphasizing its structured silhouette and wooden tapered legs. The image conveys a sense of grounded luxury and sophisticated design heritage." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant mid-century modern loveseat upholstered in warm terracotta fabric, staged in a minimalist room with raw plaster walls. The lighting is cinematic, casting a soft, deep shadow to the right of the furniture, emphasizing its structured silhouette and wooden tapered legs. The image conveys a sense of grounded luxury and sophisticated design heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkpJklLFoV9RTmsf8EaXgvIHLS1wck7u0T6ihYvwJc1hrUXdg3oJv8-jhBGVseCdfMkE3opMaEVu54uVIBSlNzvq1Paa0rbHw_OUgNewfmdoi6INsDQ23wHYSt4Coer9Vg6VCzlZBYnLdfgd16vJeX9VC8Zqfn0sNbTsqJ-8EgjzGQhOzCym2RUWNiClfcrE970QICJoBaV9rrfJNEQopeHzEc3PKYmkEilDn1j0RquSBuFw4I3y_klaFgFNR0tAVGVPD33vEMtulR"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex items-end justify-center pb-6">
+<button class="bg-primary-container text-noir font-label-caps text-label-caps tracking-[0.12em] uppercase rounded-full px-8 py-3 hover:bg-primary-fixed-dim transition-colors shadow-warm translate-y-4 group-hover:translate-y-0 duration-300">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<div class="text-center z-10 px-2">
+<h3 class="font-headline-sm text-[20px] md:text-headline-sm text-cedar mb-1">Aurelia Loveseat</h3>
+<p class="font-body-md text-body-md text-primary-container font-medium">$2,850</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col relative">
+<div class="relative w-full aspect-[4/5] bg-surface-container rounded-lg md:rounded-[16px] overflow-hidden mb-4 shadow-warm">
+<img alt="A close-up editorial shot of a monolithic, low-profile modular sofa in a textured ivory boucle fabric. The sofa rests on a highly polished concrete floor in an airy, gallery-like space. Diffused natural light washes over the scene, highlighting the tactile softness of the upholstery against the stark, minimalist architecture of the room." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up editorial shot of a monolithic, low-profile modular sofa in a textured ivory boucle fabric. The sofa rests on a highly polished concrete floor in an airy, gallery-like space. Diffused natural light washes over the scene, highlighting the tactile softness of the upholstery against the stark, minimalist architecture of the room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0OJKKqX7G8XXtMtGjqZfeH2GuQPnpMcS0fvMdUTEeHdBq6R90ByRthybDpm8mhvKp8kpXbA9VEVXjr6qgBts3542DmMkN8Ch_iZMinV0eFJwniWSwbBMbtrfJ3VrP3T1niNr-IGpm6LlOJl_b9FgyYKHqJ-049j4ruo439UHyh39NUkpvYxDWzpyQ-diHQLvW9iCWmTppnBWp049jswhsECFikV5726eSHRkSnrohf3_ANFZN6Y3Ei1_UHr1mftrLkY-S_2HFAhso"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex items-end justify-center pb-6">
+<button class="bg-primary-container text-noir font-label-caps text-label-caps tracking-[0.12em] uppercase rounded-full px-8 py-3 hover:bg-primary-fixed-dim transition-colors shadow-warm translate-y-4 group-hover:translate-y-0 duration-300">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<div class="text-center z-10 px-2">
+<h3 class="font-headline-sm text-[20px] md:text-headline-sm text-cedar mb-1">Dune Modular</h3>
+<p class="font-body-md text-body-md text-primary-container font-medium">$5,100</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col relative md:mt-12">
+<div class="relative w-full aspect-[4/5] bg-surface-container rounded-lg md:rounded-[16px] overflow-hidden mb-4 shadow-warm">
+<img alt="A beautifully crafted wooden frame sofa with deep linen cushions in a warm oatmeal hue, set against an abstract textured wall. The photography style mimics a high-end interior design magazine, focusing on the organic lines of the walnut wood armrests and the plush, inviting nature of the seating. The ambient lighting is warm and cinematic." class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully crafted wooden frame sofa with deep linen cushions in a warm oatmeal hue, set against an abstract textured wall. The photography style mimics a high-end interior design magazine, focusing on the organic lines of the walnut wood armrests and the plush, inviting nature of the seating. The ambient lighting is warm and cinematic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKUGjVc2cT_16AEQq2XBhMLJPg2_WPffRvj-G5KXigMGLPCsYzTrMk0z-HAun_b5DSu6ufoxaaB2W6me8KBj-O-d0IE4nFJNPwDYSfd3uuaLS1VS6ZhumwB76898t_4RYuUdvUXm951V30NMLfTWD1wHtBxE5L61K-0A2nMmPhdDRPBQbFWhF7j_M7l5aL7cEC5UU-VTVrFTPRCBaRA3Q8ysuRfTVSlTxvJ_8vYDPxWLqXsBmBYqGrlgyyXs3sBux7yY74Tq1_XeKj"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex items-end justify-center pb-6">
+<button class="bg-primary-container text-noir font-label-caps text-label-caps tracking-[0.12em] uppercase rounded-full px-8 py-3 hover:bg-primary-fixed-dim transition-colors shadow-warm translate-y-4 group-hover:translate-y-0 duration-300">
+                                Add to Cart
+                            </button>
+</div>
+</div>
+<div class="text-center z-10 px-2">
+<h3 class="font-headline-sm text-[20px] md:text-headline-sm text-cedar mb-1">Heritage Frame</h3>
+<p class="font-body-md text-body-md text-primary-container font-medium">$3,650</p>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg flex justify-center pb-8">
+<button class="border border-walnut/20 text-cedar font-label-caps text-label-caps tracking-[0.12em] uppercase rounded-full px-10 py-4 hover:bg-linen transition-colors">
+                    Load More
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-section-gap bg-cedar dark:bg-espresso text-linen dark:text-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-gutter px-container-padding-mobile md:px-container-padding py-section-gap w-full">
+<div class="md:col-span-2">
+<div class="font-display-lg text-headline-md text-champagne mb-stack-lg">
+                    LUXORA HOME
+                </div>
+<p class="font-body-md text-body-md text-linen/70 max-w-sm mb-8">
+                    Curating spaces of enduring elegance. We bring artisanal craftsmanship and timeless design directly to your sanctuary.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-champagne tracking-widest mb-2">Explore</h4>
+<a class="font-body-md text-body-md text-linen/70 hover:text-champagne transition-colors duration-300" href="#">Collections</a>
+<a class="font-body-md text-body-md text-linen/70 hover:text-champagne transition-colors duration-300" href="#">Our Story</a>
+<a class="font-body-md text-body-md text-linen/70 hover:text-champagne transition-colors duration-300" href="#">Lookbook</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-champagne tracking-widest mb-2">Company</h4>
+<a class="font-body-md text-body-md text-linen/70 hover:text-champagne transition-colors duration-300" href="#">Support</a>
+<a class="font-body-md text-body-md text-linen/70 hover:text-champagne transition-colors duration-300" href="#">Company</a>
+<a class="font-body-md text-body-md text-linen/70 hover:text-champagne transition-colors duration-300" href="#">Terms &amp; Privacy</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-champagne tracking-widest mb-2">Connect</h4>
+<a class="font-body-md text-body-md text-linen underline decoration-champagne underline-offset-4 hover:text-champagne transition-colors duration-300" href="#">Newsletter</a>
+<a class="font-body-md text-body-md text-linen/70 hover:text-champagne transition-colors duration-300" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-linen/70 hover:text-champagne transition-colors duration-300" href="#">Pinterest</a>
+</div>
+</div>
+<div class="px-container-padding-mobile md:px-container-padding py-8 border-t border-linen/5 text-center md:text-left">
+<span class="font-body-md text-body-md text-linen/50 text-sm">© 2024 LUXORA HOME. ALL RIGHTS RESERVED.</span>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-cream/80 dark:bg-espresso/80 backdrop-blur-lg shadow-[0_-4px_20px_rgba(60,35,20,0.08)]">
+<div class="flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-linen/50 dark:bg-cedar/30 rounded-full px-5 py-2 Active: scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">favorite</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-[10px]">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

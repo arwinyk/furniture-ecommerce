@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LUXORA HOME</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for horizontal lists */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "on-primary-container": "#4c320c",
+                      "surface-bright": "#fcf9f5",
+                      "on-secondary-fixed-variant": "#574335",
+                      "on-primary": "#ffffff",
+                      "border-subtle": "rgba(92, 64, 51, 0.10)",
+                      "surface-container-high": "#eae8e4",
+                      "linen": "#EDE0CF",
+                      "on-tertiary-fixed-variant": "#653d1e",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#dec1af",
+                      "surface-dim": "#dcdad6",
+                      "tertiary": "#805533",
+                      "primary-fixed": "#ffddb6",
+                      "primary-container": "#c09a6b",
+                      "cream": "#F7F2EB",
+                      "noir": "#0F0D0B",
+                      "on-surface-variant": "#4f453b",
+                      "error-container": "#ffdad6",
+                      "tertiary-container": "#ca956f",
+                      "on-background": "#1c1c1a",
+                      "on-secondary-fixed": "#28180d",
+                      "tertiary-fixed": "#ffdcc5",
+                      "cedar": "#5C4033",
+                      "inverse-on-surface": "#f3f0ec",
+                      "surface-tint": "#78592f",
+                      "surface-container": "#f0ede9",
+                      "on-surface": "#1c1c1a",
+                      "primary-fixed-dim": "#e9bf8e",
+                      "inverse-primary": "#e9bf8e",
+                      "on-primary-fixed": "#2a1800",
+                      "on-tertiary-fixed": "#301400",
+                      "surface-container-low": "#f6f3ef",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#522e10",
+                      "on-secondary-container": "#755e50",
+                      "outline": "#807569",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#e5e2de",
+                      "on-secondary": "#ffffff",
+                      "shadow-warm": "rgba(60, 35, 20, 0.12)",
+                      "primary": "#78592f",
+                      "surface": "#fcf9f5",
+                      "secondary": "#705a4c",
+                      "inverse-surface": "#31302e",
+                      "background": "#fcf9f5",
+                      "outline-variant": "#d2c4b7",
+                      "espresso": "#1B1410",
+                      "tertiary-fixed-dim": "#f4bb92",
+                      "secondary-container": "#f8dac8",
+                      "on-primary-fixed-variant": "#5d411a",
+                      "surface-container-highest": "#e5e2de",
+                      "champagne": "#D4B896",
+                      "secondary-fixed": "#fbddca"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-lg": "32px",
+                      "container-padding-mobile": "24px",
+                      "gutter": "32px",
+                      "section-gap": "160px",
+                      "stack-sm": "8px",
+                      "container-padding": "120px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Cormorant Garamond"
+                      ],
+                      "headline-md": [
+                              "Cormorant Garamond"
+                      ],
+                      "label-sm": [
+                              "Jost"
+                      ],
+                      "body-md": [
+                              "Jost"
+                      ],
+                      "headline-sm": [
+                              "Cormorant Garamond"
+                      ],
+                      "display-lg": [
+                              "Cormorant Garamond"
+                      ],
+                      "body-lg": [
+                              "Jost"
+                      ],
+                      "label-caps": [
+                              "Jost"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "label-caps": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.12em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-noir pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/72 dark:bg-surface-dim/72 backdrop-blur-md border-b border-champagne/20 shadow-warm flex justify-between items-center px-container-padding-mobile md:px-container-padding py-stack-md">
+<button aria-label="Menu" class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<div class="font-display-lg text-headline-sm uppercase tracking-widest text-cedar dark:text-linen">
+            LUXORA HOME
+        </div>
+<button aria-label="Cart" class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">shopping_bag</span>
+</button>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 px-container-padding-mobile md:px-container-padding pb-section-gap overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" data-alt="A breathtaking, ultra-luxury living room bathed in soft, natural morning light pouring through massive floor-to-ceiling windows. The aesthetic is modern minimalism combined with tactile warmth. A plush, cream-colored bouclé modular sofa sits on a textured natural wool rug. Accent pieces include an organic-shaped travertine coffee table and a dark walnut side chair. The overall color palette relies on warm ivory, deep espresso browns, and subtle champagne gold accents, creating a serene, editorial, and high-end cinematic atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWhWvvnsgjaPzW_Aldcc6uDuIh7wbrIS79FPznuGF5_sIx_hnm4udSgoxUCeAF6idim3pX8htHxpLAthTNgEh0SziN5T0B8alDMG02ki500cyRCKzUiMUGHp0Dw7xrj5Z1d1Kx_YkNxZp5sidOeC_Cp45cUtPGcCsI_iXROdnkO5ttFKk0J8TNG8cRRJIbcosl4X1UPzZq7T9qGzXw3fu0Rpry4BE0JVl4ykdPXAcPqEhmrYI9fe2Oj2lo4qC7Z-NX5d9Zux1Bjp5C');">
+<!-- Overlay to ensure text readability while keeping it light -->
+<div class="absolute inset-0 bg-surface/30 mix-blend-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/80 via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-primary-container uppercase mb-stack-md tracking-widest">
+                        NEW COLLECTION — SS 2025
+                    </span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-cedar mb-stack-lg italic leading-tight">
+                        Where Every <br/>
+                        Room Tells <br/>
+                        Your Story
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-stack-lg">
+                        Handcrafted furniture designed with intention. Experience the tactile warmth of heritage craftsmanship meeting modern minimalist living.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-section-gap">
+<a class="inline-flex justify-center items-center px-8 py-4 bg-primary-container text-noir font-label-caps text-label-caps uppercase tracking-widest rounded-full hover:bg-primary-fixed-dim transition-colors shadow-warm" href="#">
+                            Explore Collection
+                        </a>
+<a class="inline-flex justify-center items-center px-8 py-4 border border-cedar text-cedar font-label-caps text-label-caps uppercase tracking-widest rounded-full hover:bg-cedar hover:text-linen transition-colors" href="#">
+                            Design Your Space
+                        </a>
+</div>
+<!-- Micro Stats -->
+<div class="flex gap-8 border-t border-border-subtle pt-stack-md max-w-lg">
+<div>
+<div class="font-headline-sm text-headline-sm text-cedar">25+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Years Artisanal</div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-cedar">100%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Sustainably Sourced</div>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-cedar">Lifetime</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Craft Guarantee</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Static Marquee (No animation per rules) -->
+<section class="bg-cedar py-4 border-y border-espresso overflow-hidden">
+<div class="whitespace-nowrap font-label-caps text-label-caps text-primary-container uppercase tracking-[0.2em] px-container-padding-mobile text-center">
+                Handcrafted Quality   ·   Free White-Glove Delivery   ·   Sustainable Materials   ·   Heritage Craftsmanship
+            </div>
+</section>
+<!-- Category Grid (Asymmetric Bento) -->
+<section class="py-section-gap px-container-padding-mobile md:px-container-padding">
+<div class="text-center mb-section-gap">
+<h2 class="font-headline-md text-headline-md text-cedar mb-stack-sm">Curated Spaces</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore collections tailored for every facet of your life.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-[auto] gap-gutter auto-rows-[300px]">
+<!-- Large Item 1 (Sofas) -->
+<div class="md:col-span-2 md:row-span-2 relative group rounded-xl overflow-hidden shadow-warm cursor-pointer">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sprawling, minimalist living room setting featuring a low-profile, monumental modular sofa upholstered in textural oyster-white linen. The sofa anchors the room, sitting atop a distressed vintage rug in muted beige and rust tones. Background elements include abstract plaster wall art and a large fiddle leaf fig tree. The lighting is cinematic, casting soft, warm, intentional shadows that highlight the fabric's rich texture against the pristine modern light-mode architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP7hieImD5G4NXLEK43-TNv4ZoK8FxKJcnNvVc9YQAlZQYv0XY4-K3hRJ5Q94H7oLOn8GGdx4MFwuOMTTZjbuPlKBOut5hAEV2pTBZybPRFKemJMM-0UpKYutxho5tT07eInk-6RFVlO277nONcALs8TqXBty6sdL_5lX1zv0mnIhlQCgWuGGoEF3T6l9H9KFa-rKQC1ux7WhHJN7PdezRT7F04nB8MdXyU8qG1c86s3TFVyTqGuMIxXucvOvBoNWaEXvWv7k3sXr8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<span class="font-headline-sm text-headline-sm text-on-primary">Sofas &amp; Sectionals</span>
+</div>
+</div>
+<!-- Small Item 1 (Decor) -->
+<div class="relative group rounded-xl overflow-hidden shadow-warm cursor-pointer">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, editorial-style shot of luxury home decor resting on a ribbed walnut credenza. Items include a handcrafted unglazed ceramic vase holding dried lunaria stems, a stack of heavy linen-bound art books, and a raw brass candle holder. The background is a soft, out-of-focus warm ivory wall. The lighting is directional, creating deep, tactile shadows that emphasize the artisanal quality and varied textures of the decorative objects." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAGuTedRrRX_1g213Vz6GStsWDnC7V7TMmZgCCT8S-iAAfLi-y2TDfpF6-Nd6a5Zh7FblS0r11j9jXvSIOn7s9_V4PBAOPdAfwC9MSGhzrb-ybtV1NTYVu3N4WaR_QRBmm9ehxSrpPy7bFhtl9qPCg_TPrIykwKUzfKUQhM6qWkdzqqVlmj83F3AYch5VnXFQ9i2xX2hMq_TrSN9jLv7oHvQRRRk2alc9c_BYp-OAGZlHfl14xcNh2Q4Pgqi-qRpBkuM3hhV8u052M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="font-headline-sm text-headline-sm text-on-primary">Decor</span>
+</div>
+</div>
+<!-- Medium Tall Item (Beds) -->
+<div class="md:row-span-2 relative group rounded-xl overflow-hidden shadow-warm cursor-pointer">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene, sophisticated bedroom interior bathed in soft morning light. The focal point is a low-slung platform bed crafted from blonde oak, dressed casually in layers of crumpled, heavy-weight Belgian linen in shades of stone and pure white. A minimalist floating nightstand holds a sleek matte black reading lamp. The atmosphere is deeply tranquil, employing a strictly neutral color palette to evoke a high-end, slow-living boutique hotel experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAxTS-Lj76GTX0pumWmhEA1yRQ-V2bfMUcK2TDMjGzEjC43ebpkvqCr5wLSYDxj9WT3dFKi8XpTqpxd2F9OuWTlq8IlF-AVaLk5QacpGliC5e5QHarwjJTnRq-Fa34EId2E1fqGmPPUQDVKRJvR8W32VtoOXm5iiJi164tUPPNlgW24Vpt0X6E-dJ3Z5rIOkpJiaIA1NnxjbFJmSViRC2YguJkmZnVWwNLPCcrAMcE5OAN59f5laZfmuKN0a0iNmc5b-KfqC4dRt82"/>
+<div class="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="font-headline-sm text-headline-sm text-on-primary">Beds</span>
+</div>
+</div>
+<!-- Small Item 2 (Dining) -->
+<div class="relative group rounded-xl overflow-hidden shadow-warm cursor-pointer">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, modern dining room setup showcasing an organic-shaped, solid blackened ash wood dining table. Surrounding the table are minimalist chairs upholstered in taupe bouclé fabric. Above hangs a delicate, sprawling brass chandelier that contrasts with the heavy wood. The setting is clean and airy, utilizing extreme negative space to allow the sculptural forms of the furniture to act as art pieces within the light-flooded room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvTJbL7QfwIKf2oHu-L4tpUEMgpUvWx8zqABLxjK0uZgsTV3F_3njjxZ2YCYQiMNDuS-Kl9Z6E9n4QDDdt4Nsx_g5sw5e9EpcSGi9I3rdXX_y4uJxBH2ybgjzsTx4S5aDL2cHZ1WGi6JcXlYghM5GfCcTWGgj3N-mM6DjbiPKICf5HsY2ni3Agtr9S_XSE6YV0QK4FXRbY2DYBCElxnhYqAyYZim8_BAopVPhUrbosdYPvelBzcipXDSYJZWAx4aPL-jD854uQS8ly"/>
+<div class="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="font-headline-sm text-headline-sm text-on-primary">Dining</span>
+</div>
+</div>
+<!-- Small Item 3 (Office) -->
+<div class="md:col-span-2 relative group rounded-xl overflow-hidden shadow-warm cursor-pointer">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An elegant, minimalist home office space. A sleek, monolithic desk made of polished travertine sits at the center, paired with an ergonomically curved chair wrapped in saddle leather. The desk holds only a streamlined metal desk lamp and a sleek laptop. The background features floor-to-ceiling sheer linen curtains diffusing harsh sunlight into a soft, ethereal glow, creating a productive yet calming, sophisticated environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFga70Nt7CGqeiJbdb0gBZba4bJ1PvzpILenXKe8t_xxRsrgnppe8V6kc4EzO-_0cB6npaOtoGVy3_-vfdR8MAulx7seMaG0Holaj8DmoG2OlxQGkDVtieApWR5xMpvbNtLAG49G9_89NAtgrsv2NocoHmwY7RtF2OyCoU-fc28RvVDTLC-ohaMfsrM8K-AYGozkiO9ToxcihLyQeO_OA7ZtGtKIz7ADTTALOr_Xgb7COnYvJc8r33uIBsbzpxtX6zhbmO5ocEYo-P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="font-headline-sm text-headline-sm text-on-primary">Office</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Editorial -->
+<section class="py-section-gap overflow-hidden bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto">
+<!-- Row 1 -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center mb-section-gap px-container-padding-mobile md:px-0 md:pl-container-padding">
+<div class="md:col-span-7 relative h-[600px] rounded-xl overflow-hidden shadow-warm">
+<img alt="" class="w-full h-full object-cover" data-alt="A beautifully styled living space capturing the essence of Scandinavian Calm. The composition features a classic woven armchair by a bright window, next to a sculptural floor lamp. The color palette is strictly muted—soft greys, warm whites, and pale woods. The lighting is diffused and even, emphasizing the high-quality materials and creating a sense of serene, uncluttered luxury typical of high-end editorial interior photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrswzHkaGTOGPDAwRngNyXvBANW10O7ZBpbhE3MEFqe1qnDDOgyOUa34ymqMhR3jADBEZ32-M3XiyjjaW0WPaiCVFTPxH4sjvwtqvqjPJGC_gup8WTHTgIDYCZTfMkv9YXOA-MVow9q5BkzcxvasFDkuu-BkSTiSl9ddp8FrHwLYlo-47Qh19_MKIB0NRuF6TluohI2ZVPqIDs43LXAS3IoBEdX-hDYSQ7JyXn0crHE56Li_WnEZ9kANGp6HCpJgTWcxQWwt30bvMS"/>
+</div>
+<div class="md:col-span-4 md:col-start-9 py-stack-lg md:pr-container-padding">
+<span class="font-label-caps text-label-caps text-primary-container uppercase mb-stack-md block">Editorial</span>
+<h3 class="font-headline-md text-headline-md text-cedar mb-stack-md">Scandinavian Calm, Perfected.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">
+                            Discover the art of creating spaces that breathe. Our latest collection embraces the principles of Nordic design—prioritizing natural light, organic materials, and uncompromised craftsmanship to craft a sanctuary of quiet luxury.
+                        </p>
+<a class="inline-flex items-center text-primary font-label-caps text-label-caps uppercase tracking-widest hover:text-cedar transition-colors" href="#">
+                            Read the Journal <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Teaser -->
+<section class="bg-espresso text-linen py-section-gap relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;q=80')] bg-cover bg-center opacity-10 mix-blend-luminosity" data-alt="A dark, moody architectural interior shot highlighting structural elements and deep shadows. The focus is on the interplay of stark geometry and subtle light bleeding through narrow vertical slats. The tones are entirely deep espresso and charcoal, providing a mysterious and highly sophisticated backdrop that implies advanced technology meeting classical architecture in a luxurious, hidden space."></div>
+<div class="relative z-10 text-center px-container-padding-mobile max-w-3xl mx-auto">
+<span class="material-symbols-outlined text-champagne text-5xl mb-stack-md">auto_awesome</span>
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg italic mb-stack-lg">
+                    Design Your Space with AI
+                </h2>
+<p class="font-body-lg text-body-lg text-surface-variant mb-stack-lg">
+                    Upload a photo of your room and let our artisanal intelligence curate a personalized layout utilizing our exclusive collections. Experience your future home before it arrives.
+                </p>
+<a class="inline-flex justify-center items-center px-8 py-4 bg-primary-container text-noir font-label-caps text-label-caps uppercase tracking-widest rounded-full hover:bg-champagne transition-colors shadow-warm" href="#">
+                    Start Virtual Design
+                </a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-cream/80 dark:bg-espresso/80 backdrop-blur-lg border-t border-champagne/10 shadow-warm flex justify-around items-center h-20 px-4 pb-safe">
+<!-- Active Tab: Home -->
+<a class="flex flex-col items-center justify-center text-primary bg-linen/50 dark:bg-cedar/30 rounded-full px-4 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined fill">home</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Home</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full mt-section-gap border-t border-linen/5 bg-cedar dark:bg-espresso grid grid-cols-1 md:grid-cols-5 gap-gutter px-container-padding-mobile md:px-container-padding py-section-gap text-linen dark:text-surface-variant font-body-md text-body-md">
+<div class="md:col-span-2">
+<div class="font-display-lg text-headline-md text-champagne mb-stack-lg">LUXORA HOME</div>
+<p class="text-linen/70 max-w-sm mb-stack-lg">
+                Crafting environments of sophisticated ease. Elevating the everyday through tactile materiality and timeless silhouettes.
+            </p>
+<div class="text-linen/50 font-label-sm text-label-sm uppercase tracking-widest">
+                © 2024 LUXORA HOME. ALL RIGHTS RESERVED.
+            </div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-champagne uppercase mb-stack-md">Explore</h4>
+<ul class="space-y-3">
+<li><a class="text-linen/70 hover:text-champagne transition-colors duration-300 block" href="#">Collections</a></li>
+<li><a class="text-linen/70 hover:text-champagne transition-colors duration-300 block" href="#">Lookbook</a></li>
+<li><a class="text-linen/70 hover:text-champagne transition-colors duration-300 block" href="#">Journal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-champagne uppercase mb-stack-md">Assistance</h4>
+<ul class="space-y-3">
+<li><a class="text-linen/70 hover:text-champagne transition-colors duration-300 block" href="#">Support</a></li>
+<li><a class="text-linen/70 hover:text-champagne transition-colors duration-300 block" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-linen/70 hover:text-champagne transition-colors duration-300 block" href="#">Material Care</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-champagne uppercase mb-stack-md">Stay Connected</h4>
+<ul class="space-y-3 mb-stack-lg">
+<li><a class="text-linen/70 hover:text-champagne transition-colors duration-300 block" href="#">Company</a></li>
+<li><a class="text-linen/70 hover:text-champagne transition-colors duration-300 block" href="#">Showrooms</a></li>
+</ul>
+<form class="flex flex-col gap-2 relative">
+<label class="sr-only" for="newsletter">Newsletter</label>
+<div class="relative focus-within:ring-1 focus-within:ring-champagne rounded-xl transition-all">
+<input class="w-full bg-espresso/50 border border-linen/20 rounded-xl px-4 py-3 text-linen placeholder:text-linen/30 focus:outline-none focus:border-champagne font-body-md text-body-md" id="newsletter" placeholder="Enter your email" type="email"/>
+<button aria-label="Subscribe" class="absolute right-2 top-1/2 -translate-y-1/2 text-champagne hover:text-linen transition-colors" type="submit">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</footer>
+</body></html>

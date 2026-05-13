@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cart Drawer</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#4c320c",
+                        "surface-bright": "#fcf9f5",
+                        "on-secondary-fixed-variant": "#574335",
+                        "on-primary": "#ffffff",
+                        "border-subtle": "rgba(92, 64, 51, 0.10)",
+                        "surface-container-high": "#eae8e4",
+                        "linen": "#EDE0CF",
+                        "on-tertiary-fixed-variant": "#653d1e",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#dec1af",
+                        "surface-dim": "#dcdad6",
+                        "tertiary": "#805533",
+                        "primary-fixed": "#ffddb6",
+                        "primary-container": "#c09a6b",
+                        "cream": "#F7F2EB",
+                        "noir": "#0F0D0B",
+                        "on-surface-variant": "#4f453b",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#ca956f",
+                        "on-background": "#1c1c1a",
+                        "on-secondary-fixed": "#28180d",
+                        "tertiary-fixed": "#ffdcc5",
+                        "cedar": "#5C4033",
+                        "inverse-on-surface": "#f3f0ec",
+                        "surface-tint": "#78592f",
+                        "surface-container": "#f0ede9",
+                        "on-surface": "#1c1c1a",
+                        "primary-fixed-dim": "#e9bf8e",
+                        "inverse-primary": "#e9bf8e",
+                        "on-primary-fixed": "#2a1800",
+                        "on-tertiary-fixed": "#301400",
+                        "surface-container-low": "#f6f3ef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#522e10",
+                        "on-secondary-container": "#755e50",
+                        "outline": "#807569",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e5e2de",
+                        "on-secondary": "#ffffff",
+                        "shadow-warm": "rgba(60, 35, 20, 0.12)",
+                        "primary": "#78592f",
+                        "surface": "#fcf9f5",
+                        "secondary": "#705a4c",
+                        "inverse-surface": "#31302e",
+                        "background": "#fcf9f5",
+                        "outline-variant": "#d2c4b7",
+                        "espresso": "#1B1410",
+                        "tertiary-fixed-dim": "#f4bb92",
+                        "secondary-container": "#f8dac8",
+                        "on-primary-fixed-variant": "#5d411a",
+                        "surface-container-highest": "#e5e2de",
+                        "champagne": "#D4B896",
+                        "secondary-fixed": "#fbddca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "container-padding-mobile": "24px",
+                        "gutter": "32px",
+                        "section-gap": "160px",
+                        "stack-sm": "8px",
+                        "container-padding": "120px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Cormorant Garamond"],
+                        "headline-md": ["Cormorant Garamond"],
+                        "label-sm": ["Jost"],
+                        "body-md": ["Jost"],
+                        "headline-sm": ["Cormorant Garamond"],
+                        "display-lg": ["Cormorant Garamond"],
+                        "body-lg": ["Jost"],
+                        "label-caps": ["Jost"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "300"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "300"}],
+                        "label-caps": ["13px", {"lineHeight": "1.2", "letterSpacing": "0.12em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased h-screen w-screen overflow-hidden flex flex-col">
+<!-- Header (Fixed) -->
+<header class="flex justify-between items-center px-container-padding-mobile py-stack-md border-b border-champagne/20 bg-surface/90 backdrop-blur-md z-20 shrink-0">
+<h1 class="font-headline-sm text-headline-sm uppercase tracking-widest text-cedar">Your Cart (3)</h1>
+<button aria-label="Close cart" class="p-2 -mr-2 text-cedar hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">close</span>
+</button>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto px-container-padding-mobile py-stack-lg space-y-stack-lg pb-[180px]">
+<!-- Cart Items List -->
+<section class="space-y-stack-md">
+<!-- Item 1 -->
+<article class="flex gap-stack-md border-b border-border-subtle pb-stack-md">
+<div class="w-[100px] h-[130px] rounded-lg overflow-hidden shrink-0 shadow-warm bg-surface-container-low">
+<img alt="A sleek, modern lounge chair featuring a curved walnut frame and rich espresso leather upholstery. The chair sits elegantly on a polished concrete floor within a sunlit, minimalist gallery space. Soft, warm shadows fall across the tactile leather surface, emphasizing high-end artisanal craftsmanship and cinematic lighting." class="w-full h-full object-cover" data-alt="A sleek, modern lounge chair featuring a curved walnut frame and rich espresso leather upholstery. The chair sits elegantly on a polished concrete floor within a sunlit, minimalist gallery space. Soft, warm shadows fall across the tactile leather surface, emphasizing high-end artisanal craftsmanship and cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy0Hm8bgZv16GOpASb7hhJUYRjr9dYQ_alFm8AB8MJss_AeyeQKcmFV4izLqgiyxzf1gDT1XkRyPnOuRgE8FLxFOb5k3bYc1737rKWkA6LzentgOTs1tGmBv8ImOnsIxzIKTpP5PPREhprVjs7MAf68TzipCUqnhvZIM87lbsTTeH2HQa5tPwV0bJtlO0H7jFetyjQHyYJXqRXBkRxGFrBYF8Vr8duOjEVIRFRStoUTzFOstgQ6l8TqpKvK4oDzFjVWOvE2SKFfaLK"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div class="flex justify-between items-start gap-2">
+<div>
+<h2 class="font-body-lg text-body-lg font-medium text-cedar">Kensington Lounge</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Walnut / Espresso Leather</p>
+</div>
+<button aria-label="Remove item" class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-3 border border-outline-variant rounded-full px-3 py-1">
+<button class="text-on-surface-variant hover:text-cedar"><span class="material-symbols-outlined" style="font-size: 16px;">remove</span></button>
+<span class="font-label-sm text-label-sm w-4 text-center">1</span>
+<button class="text-on-surface-variant hover:text-cedar"><span class="material-symbols-outlined" style="font-size: 16px;">add</span></button>
+</div>
+<span class="font-body-md text-body-md text-primary">$1,250</span>
+</div>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="flex gap-stack-md border-b border-border-subtle pb-stack-md">
+<div class="w-[100px] h-[130px] rounded-lg overflow-hidden shrink-0 shadow-warm bg-surface-container-low">
+<img alt="A sculptural ceramic vase in an organic, asymmetrical shape with a matte linen-colored glaze. The vase is positioned on a solid oak pedestal against an ivory wall, accented by a single dry botanical stem. The lighting is diffused and warm, casting long, elegant shadows that highlight its tactile, artisanal texture." class="w-full h-full object-cover" data-alt="A sculptural ceramic vase in an organic, asymmetrical shape with a matte linen-colored glaze. The vase is positioned on a solid oak pedestal against an ivory wall, accented by a single dry botanical stem. The lighting is diffused and warm, casting long, elegant shadows that highlight its tactile, artisanal texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtKaj-udpQM3bzVG1Y9pZnMmrxj4kXcOLm39esMsW6IL0mXbO9tm3x8V6ICAD9H0UZWitMqfK9ZdhBRTny8lrSt8-LSMxqOBgiWVuBv75iHjfvq12_wY38K9DS1J4KijPxOAfbjomyTp4dHHqa5Vf4W871a6dhrqY6cwMZWm-k4kk4NW4tCICJ9UuWGcsFUd-Zvx16C82_97rEiEGm78QPEpDYkONPvdbvQlwveABuZSRqq1qzqsxOxuNyBCNXvxwAihpNkdjKmTl3"/>
+</div>
+<div class="flex-1 flex flex-col justify-between py-1">
+<div class="flex justify-between items-start gap-2">
+<div>
+<h2 class="font-body-lg text-body-lg font-medium text-cedar">Aura Ceramic Vase</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Matte Linen / Large</p>
+</div>
+<button aria-label="Remove item" class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">delete</span>
+</button>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-3 border border-outline-variant rounded-full px-3 py-1">
+<button class="text-on-surface-variant hover:text-cedar"><span class="material-symbols-outlined" style="font-size: 16px;">remove</span></button>
+<span class="font-label-sm text-label-sm w-4 text-center">2</span>
+<button class="text-on-surface-variant hover:text-cedar"><span class="material-symbols-outlined" style="font-size: 16px;">add</span></button>
+</div>
+<span class="font-body-md text-body-md text-primary">$340</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Promo Code -->
+<section class="flex gap-2">
+<input class="flex-1 rounded-xl border border-outline-variant bg-surface px-4 py-3 font-body-md text-body-md text-cedar placeholder:text-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" placeholder="Gift card or discount code" type="text"/>
+<button class="rounded-xl bg-cedar text-linen px-6 py-3 font-label-caps text-label-caps tracking-[0.12em] uppercase hover:bg-espresso transition-colors">Apply</button>
+</section>
+<!-- Order Summary -->
+<section class="space-y-stack-sm bg-surface-container-low p-stack-md rounded-xl">
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span class="text-cedar">$1,590.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Shipping</span>
+<span class="text-cedar">Calculated at next step</span>
+</div>
+<div class="flex justify-between items-end pt-stack-sm border-t border-border-subtle mt-stack-sm">
+<span class="font-body-md text-body-md text-cedar">Total</span>
+<span class="font-headline-sm text-[28px] text-cedar leading-none">$1,590.00</span>
+</div>
+</section>
+<!-- AI Upsell -->
+<section class="pt-stack-md">
+<h3 class="font-headline-sm text-[20px] text-cedar mb-stack-md">You might also like</h3>
+<div class="flex gap-stack-md overflow-x-auto pb-stack-sm snap-x no-scrollbar -mx-container-padding-mobile px-container-padding-mobile">
+<!-- Mini Card 1 -->
+<div class="w-[140px] flex-shrink-0 snap-start space-y-2 group cursor-pointer">
+<div class="w-full h-[180px] rounded-lg overflow-hidden shadow-warm bg-surface-container">
+<img alt="A minimalist woven wool throw blanket draped casually over the arm of a linen sofa. The blanket features subtle geometric patterns in warm terracotta and cream tones. Shot in soft, natural daylight with a shallow depth of field to highlight the tactile fuzziness of the premium textile." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist woven wool throw blanket draped casually over the arm of a linen sofa. The blanket features subtle geometric patterns in warm terracotta and cream tones. Shot in soft, natural daylight with a shallow depth of field to highlight the tactile fuzziness of the premium textile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6vMZY-vajzss3DmwMTVIIg9RoZQmgOGTYn_bCNVUd3Gm-vnLwqk0yAayJm_IzBZuJLHHjTenSjvGejtno5-r6iQf3Ir8Kk4OgA_A8Dp14Fb53jbF_D1FiGrVClRFqnJJl-g_oJMJRBAwHU_-kmwU_uigSfM-_D3DsDgJmsMwJrLGL2cfa3YqhaAbylD_Uyc_GYtFi13wFIt8TnNxbeZPaxuypMZBv6kAIWNLYjbXWGs5eHldIzmMYjTu_Lo4C5zFxbBtdOJ8Q1H0z"/>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-cedar truncate">Alpaca Wool Throw</h4>
+<p class="font-label-sm text-label-sm text-primary mt-0.5">$185</p>
+</div>
+</div>
+<!-- Mini Card 2 -->
+<div class="w-[140px] flex-shrink-0 snap-start space-y-2 group cursor-pointer">
+<div class="w-full h-[180px] rounded-lg overflow-hidden shadow-warm bg-surface-container">
+<img alt="A modern architectural brass table lamp casting a warm, atmospheric glow on a dark walnut nightstand. The design is starkly minimalist with sharp geometric lines. The ambient lighting emphasizes the brushed metal texture and creates a sophisticated, cinematic contrast between light and dark within the room." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern architectural brass table lamp casting a warm, atmospheric glow on a dark walnut nightstand. The design is starkly minimalist with sharp geometric lines. The ambient lighting emphasizes the brushed metal texture and creates a sophisticated, cinematic contrast between light and dark within the room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr3O7hypaO54SrbWLIBY_7D8GTfCxT7oMU0lo8ybFsFoOBGzriUmpNngnS6aSp0eyJlrkqHgyQ4EJBusHzGtV9XSrZ8ol56nIJJHXK1lMeUtCnE_xz-FPCkrPGJYU01gZaHnceLSbh0m1SYk9jD56ZqzuaG_-LeYHSiwTZDTHOKvcyvnN69lr5ZShLc-tHvK-g-q3LHCKZjRdVdDTvuSjXzqcG-pCvCLT4clCteg-6nEezs6uSwtRARQFXxmPjFk-jgCrgqcrnwqvs"/>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-cedar truncate">Brass Linear Lamp</h4>
+<p class="font-label-sm text-label-sm text-primary mt-0.5">$220</p>
+</div>
+</div>
+<!-- Mini Card 3 -->
+<div class="w-[140px] flex-shrink-0 snap-start space-y-2 group cursor-pointer">
+<div class="w-full h-[180px] rounded-lg overflow-hidden shadow-warm bg-surface-container">
+<img alt="A stack of three artisanal ceramic plates in varying shades of matte charcoal and stone gray. The plates rest on a rustic wooden dining table under bright, direct overhead lighting that casts crisp shadows. The setting evokes a sense of modern organic luxury and slow living." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stack of three artisanal ceramic plates in varying shades of matte charcoal and stone gray. The plates rest on a rustic wooden dining table under bright, direct overhead lighting that casts crisp shadows. The setting evokes a sense of modern organic luxury and slow living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvPss7uhGlI5kvoTdOnApstswotpUqL_qo4h9dwp_-YzMHV7vDEuIGIVXBECwJTz8p3wGPu1ooaLdaImBuzYnB-TqTMP2dse5QCMH3VVOQxQ7issI9dEHWxNlnrFwr5qiy1GGHOs-ah6yC9AKiydpaZ3YHMuBN0Js8w-SgpIZpP3rYdLgxeWRVr17lNu_HAsIZLgAJxCCTF3aWR1MBQIreGY4jmaYyk5jI5DumAQPhAfGBNyURhhxuD1xPsNwazzeY5p09JMpJI78Z"/>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-cedar truncate">Stone Plate Set</h4>
+<p class="font-label-sm text-label-sm text-primary mt-0.5">$95</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer / CTA (Fixed Bottom) -->
+<footer class="fixed bottom-0 left-0 w-full px-container-padding-mobile py-stack-md pb-safe bg-surface/80 backdrop-blur-xl border-t border-champagne/20 z-20">
+<button class="w-full rounded-full bg-primary-container text-noir font-label-caps text-label-caps py-4 uppercase tracking-[0.12em] text-center hover:bg-primary-fixed-dim transition-colors shadow-warm flex justify-center items-center gap-2">
+            CHECKOUT
+            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-3 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">lock</span> Secure Encrypted Checkout
+        </p>
+</footer>
+<style>
+        /* Utility for hiding scrollbar in horizontal scroll areas while keeping functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Safe area padding for mobile devices */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 16px);
+        }
+    </style>
+</body></html>
