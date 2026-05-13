@@ -7,13 +7,23 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor':   ['react', 'react-dom', 'react-router-dom'],
-          'motion':         ['framer-motion'],
-          'firebase':       ['firebase/app', 'firebase/auth', 'firebase/firestore'],
-          'ui':             ['zustand', '@tanstack/react-query'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('framer-motion')) {
+              return 'motion';
+            }
+            if (id.includes('firebase')) {
+              return 'firebase';
+            }
+            if (id.includes('zustand') || id.includes('@tanstack/react-query')) {
+              return 'ui';
+            }
+            return 'vendor';
+          }
         }
-      }
     }
   }
 })
