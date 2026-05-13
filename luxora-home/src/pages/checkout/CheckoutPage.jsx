@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { ChevronLeft, Lock } from 'lucide-react';
 import { useCartStore } from '../../store/useCartStore';
 import { formatCurrency } from '../../utils/formatters';
+import { loadScript } from '../../utils/loadScript';
 import Button from '../../components/ui/Button';
 
 const CheckoutPage = () => {
@@ -16,14 +17,50 @@ const CheckoutPage = () => {
   const tax = subtotal * 0.18; // 18% GST (mock)
   const total = subtotal + shipping + tax;
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
     setIsProcessing(true);
-    // Mock Payment Flow
-    setTimeout(() => {
+
+    const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
+
+    if (!res) {
+      alert('Razorpay SDK failed to load. Are you online?');
       setIsProcessing(false);
-      clearCart();
-      navigate('/order-success/MOCK_ORDER_123');
-    }, 2000);
+      return;
+    }
+
+    // Since we don't have a secure backend to generate an order_id right now,
+    // we use the legacy frontend-only approach for testing purposes.
+    const options = {
+      key: "rzp_test_SoxTe3T8Z32EyG",
+      currency: "INR",
+      amount: Math.round(total * 100).toString(), // amount in paise
+      name: "LUXORA HOME",
+      description: "Purchase of Premium Furniture",
+      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=200&h=200", // A nice placeholder logo
+      handler: function (response) {
+        // Payment successful
+        setIsProcessing(false);
+        clearCart();
+        navigate(`/order-success/${response.razorpay_payment_id}`);
+      },
+      prefill: {
+        name: "Test User",
+        email: "test@example.com",
+        contact: "9999999999"
+      },
+      theme: {
+        color: "#2C2C2C" // match luxora-noir/espresso
+      },
+      modal: {
+        ondismiss: function() {
+          // Payment cancelled by user
+          setIsProcessing(false);
+        }
+      }
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
   };
 
   if (items.length === 0 && !isProcessing) {
