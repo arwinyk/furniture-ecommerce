@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { Menu, ShoppingBag, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { luxoraMotion } from '../../animations/variants';
+import { useCartStore } from '../../store/useCartStore';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { toggleCart, getCartCount } = useCartStore();
+  const cartCount = getCartCount();
 
   return (
     <>
@@ -27,8 +30,17 @@ const Navbar = () => {
           LUXORA HOME
         </Link>
         
-        <button aria-label="Cart" className="text-text-primary hover:text-accent transition-colors duration-300 relative">
+        <button 
+          aria-label="Cart" 
+          onClick={toggleCart}
+          className="text-text-primary hover:text-accent transition-colors duration-300 relative"
+        >
           <ShoppingBag size={28} strokeWidth={1.5} />
+          {cartCount > 0 && (
+            <span className="absolute -top-1 -right-1 bg-accent text-luxora-noir text-[10px] font-body font-bold w-5 h-5 flex items-center justify-center rounded-full">
+              {cartCount}
+            </span>
+          )}
         </button>
       </motion.header>
 
